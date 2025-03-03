@@ -1,4 +1,3 @@
-
 import json
 import os
 
@@ -11,7 +10,7 @@ class SmartChatbot:
     def load_responses(self):
         """Load responses from the data file."""
         if os.path.exists(self.data_file):
-            with open(self.data_file, 'r') as file
+            with open(self.data_file, 'r') as file:
                 self.responses = json.load(file)
         else:
             self.responses = {}
@@ -19,7 +18,7 @@ class SmartChatbot:
     def save_responses(self):
         """Save responses to the data file."""
         with open(self.data_file, 'w') as file:
-            json.dump(self.responses, s)
+            json.dump(self.responses, file)
 
     def train(self):
         """Train the chatbot with a new question and response."""
@@ -33,7 +32,7 @@ class SmartChatbot:
         """Chat with the user using predefined and learned responses."""
         print("Chatbot is ready to chat! Type 'exit' to quit.")
         while True:
-            user_input / input("You: ")
+            user_input = input("You: ")
             if user_input.lower() == 'exit':
                 print("Goodbye!")
                 break
@@ -61,5 +60,5 @@ class SmartChatbot:
                 print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
-    chatbot = ("print")
+    chatbot = SmartChatbot()
     chatbot.menu()
